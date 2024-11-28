@@ -1,0 +1,37 @@
+var helloSpeaker = {
+  speak: function(name) {
+    console.log("Hello " + name);
+  }
+};
+
+var byeSpeaker = {
+  speak: function(name) {
+    console.log("Goodbye " + name);
+  }
+};
+(function (helloSpeaker, byeSpeaker) {
+
+  var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+  for (var i = 0; i < names.length; i++) {
+    var firstLetter = names[i].charAt(0).toLowerCase();
+    
+    if (firstLetter === 'j') {
+      byeSpeaker.speak(names[i]);
+    } else {
+      helloSpeaker.speak(names[i]);
+    }
+  }
+
+})(helloSpeaker, byeSpeaker);
+
+VM259:3 Hello Yaakov
+VM259:9 Goodbye John
+VM259:9 Goodbye Jen
+VM259:9 Goodbye Jason
+VM259:3 Hello Paul
+VM259:3 Hello Frank
+VM259:3 Hello Larry
+VM259:3 Hello Paula
+VM259:3 Hello Laura
+VM259:9 Goodbye Jim
+undefined
